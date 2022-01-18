@@ -30,7 +30,7 @@
     color: #BDBDBD;
 }
 
-.btn {
+.btn, .linkArea > button {
     background-color: #2F80ED;
     border-radius: 8px;
     padding: 10px;
@@ -43,6 +43,64 @@ input[type="file"] {
     display: none;
 }
 
-.btn:hover {
+.btn:hover, .linkArea > button:hover {
     background-color: #2371da;
+}
+
+.uploadingContainer {
+    width: 400px;
+    height: 143px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.uploadedContainer {
+    width: 400px;
+    height: 374px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.image {
+    width: 338px;
+    height: 224px;
+    border: #282c34 1px solid;
+    border-radius: 12px;
+}
+
+.linkArea {
+    margin-top: 20px;
+    width: 338px;
+    height: 34px;
+    background: #F6F8FB;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkArea > p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 12px;
+    flex-basis: 240px;
+}
+
+.linkArea > button {
+    flex-grow: 1;
 }
