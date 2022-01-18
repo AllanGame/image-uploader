@@ -1,0 +1,48 @@
+.uploader {
+    width: 402px;
+    height: 469px;
+    background: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.droppable {
+    width: 338px;
+    height: 219px;
+    background: #F6F8FB;
+    border: 1px dashed #97BEF4;
+    box-sizing: border-box;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.indicator {
+    color: #BDBDBD;
+}
+
+.btn {
+    background-color: #2F80ED;
+    border-radius: 8px;
+    padding: 10px;
+    border: none;
+    color: #fff;
+    font-family: Poppins, sans-serif;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.btn:hover {
+    background-color: #2371da;
+}
