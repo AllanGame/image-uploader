@@ -19,10 +19,10 @@ const Uploader = () => {
     if(uploadState === UPLOAD_STATE.UPLOADED) return (
         <div className="uploadedContainer">
             <h1>Uploaded Successfully!</h1>
-            <img className="image" src={`http://localhost:3000/${uploadInfo.path}`} alt="user img"/>
+            <img className="image" src={`http://localhost:3000${uploadInfo.path}`} alt="user img"/>
             <div className="linkArea">
-                <p>http://localhost:3000/{uploadInfo.path}</p>
-                <button>Copy Link</button>
+                <p>http://localhost:3000{uploadInfo.path}</p>
+                <button onClick={handleCopy}>Copy Link</button>
             </div>
         </div>
     )
@@ -56,6 +56,10 @@ const Uploader = () => {
             .then((response) => response.json())
             .then(data => setUploadInfo(data))
             .finally(() => setUploadState(UPLOAD_STATE.UPLOADED));
+    }
+
+    function handleCopy() {
+        navigator.clipboard.writeText(`http://localhost:3000${uploadInfo.path}`).then(() => alert('Copied URL to the clipboard'));
     }
 }
 
