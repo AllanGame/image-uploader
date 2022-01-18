@@ -13,13 +13,17 @@ const Uploader = () => {
     const [uploadInfo, setUploadInfo] = useState({});
 
     if(uploadState === UPLOAD_STATE.UPLOADING) return (
-        <div>Loading...</div>
+        <div className="uploadingContainer">Loading...</div>
     )
 
     if(uploadState === UPLOAD_STATE.UPLOADED) return (
-        <div>
-            <img src={`http://localhost:3000/${uploadInfo.path}`} alt="user img"/>
-            <p>Your image: http://localhost:3000/{uploadInfo.path}</p>
+        <div className="uploadedContainer">
+            <h1>Uploaded Successfully!</h1>
+            <img className="image" src={`http://localhost:3000/${uploadInfo.path}`} alt="user img"/>
+            <div className="linkArea">
+                <p>http://localhost:3000/{uploadInfo.path}</p>
+                <button>Copy Link</button>
+            </div>
         </div>
     )
 
