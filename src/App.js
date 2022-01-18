@@ -1,12 +1,14 @@
 import './App.css';
 import Uploader from './components/uploader.component';
-import Layout from "./components/layout";
 
 function App() {
     return (
-        <Layout>
+        <>
             <Uploader/>
-        </Layout>
+            <footer>
+                <p>created by AllanGame - devChallenges.io</p>
+            </footer>
+        </>
     );
 }
 
