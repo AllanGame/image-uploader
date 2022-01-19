@@ -104,3 +104,7 @@ input[type="file"] {
 .linkArea > button {
     flex-grow: 1;
 }
+
+.dragging {
+    background: #e6ebf6;
+}

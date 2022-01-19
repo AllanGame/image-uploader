@@ -31,24 +31,32 @@ const Uploader = () => {
         <div className="uploader">
             <h1>Upload your image</h1>
             <p>File should be Jpeg, Png,...</p>
-            <div className="droppable">
+
+            <div className="droppable" onDragOver={(e) => e.preventDefault()} onDrop={(e) => {
+                e.preventDefault();
+                upload(e.dataTransfer.files[0]);
+            }}>
                 <ImageIcon/>
                 <p className="indicator">Drag & Drop your image here</p>
             </div>
+
             <p>Or</p>
-            <label htmlFor="file-upload" className="btn">
-                Upload File
-            </label>
-            <input id="file-upload" type="file" accept=".jpeg,.png" onChange={handleChange}/>
+
+            <label htmlFor="file-upload" className="btn">Upload File</label>
+            <input id="file-upload" type="file" accept=".jpeg,.png" onChange={event => upload(event.target.files[0])}/>
+
         </div>
+
     )
 
-   async function handleChange(event) {
+   async function upload(file) {
+       if(file.type !== "image/png") return alert('You can only upload png files!');
+
         setUploadState(UPLOAD_STATE.UPLOADING);
 
         fetch(`http://localhost:4000/upload`, {
             method: 'POST',
-            body: await event.target.files[0].arrayBuffer(),
+            body: await file.arrayBuffer(),
             headers: {
                 "Content-type": "application/octet-stream"
             }
