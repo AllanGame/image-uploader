@@ -74,5 +74,5 @@ $ npm start
 
 ## Contact
 
-- GitHub [@AllanGame](https://{github.com/your-usermame})
-- Twitter [@AllanGame_](https://{twitter.com/AllanGame_})
+- GitHub [@AllanGame](https://github.com/AllanGame)
+- Twitter [@AllanGame_](https://twitter.com/AllanGame_)
